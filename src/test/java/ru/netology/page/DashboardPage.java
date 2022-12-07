@@ -6,8 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import lombok.val;
 import ru.netology.data.DataHelper;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -25,7 +24,7 @@ public class DashboardPage {
     }
 
     public MoneyTransferPage replenishmentOpenV2 (String id) {
-        cards.findBy(Condition.text(id)).find(".button").click();
+        cards.findBy(Condition.attribute("id")).find(".button").click();
         return new MoneyTransferPage();
     }
     public int getCardBalance() {

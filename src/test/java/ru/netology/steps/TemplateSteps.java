@@ -39,7 +39,7 @@ public class TemplateSteps {
         dashboardPage = verificationPage.validVerify(verificationCode);
     }
 
-    @И("пользователь вызывает кнопку Пополнения карты с numberIdCard {string}")
+    @И("пользователь вызывает кнопку Пополнения карты с id {string}")
     public void increaseFirstCard(String numberIdCard) {
         moneyTransferPage = dashboardPage.replenishmentOpenV2(numberIdCard);
     }
@@ -51,7 +51,7 @@ public class TemplateSteps {
     }
 
 
-    @Тогда("баланс карты с карты id  {string} == {int}")
+    @Тогда("баланс карты {string} == {int}")
     public void balanceFirstCard(String id, int balance) {
         int getBalance = dashboardPage.getCardBalance();
         assertEquals(getBalance, balance);

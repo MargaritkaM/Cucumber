@@ -25,8 +25,8 @@ public class DashboardPage {
     }
 
     public MoneyTransferPage replenishmentOpenV2 (String id) {
-     cards.findBy(Condition.text(id)).find(".button").click();
-     return new MoneyTransferPage();
+        cards.findBy(Condition.text(id)).find(".button").click();
+        return new MoneyTransferPage();
     }
     public int getCardBalance() {
         val text = cards.first().text();
